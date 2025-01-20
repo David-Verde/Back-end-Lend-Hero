@@ -13,4 +13,12 @@ Linux
 
   django-admin startproject BackendLendHero                           #Create Project
   pip install django #install in virtual machine
-  python manage.py startapp lend-hero-backend                         #Create app MVC
+  python manage.py startapp lend-hero-backend                          #Create app MVC
+
+  sudo apt update
+  sudo apt upgrade
+  sudo apt install mysql-server
+
+  python manage.py migrate                                             #Make Migration
+  python manage.py createsuperuser                                     #Create Admin User
+  python manage.py runserver                                           #Run Server
