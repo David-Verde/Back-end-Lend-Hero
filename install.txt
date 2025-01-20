@@ -1,0 +1,16 @@
+Linux
+  python3 --version
+  sudo apt update
+  sudo apt install python3-django -y
+  django-admin --version                                              #check version
+  python3 -m venv venv                                                #Start virtual machine
+  source venv/bin/activate
+  pip install mysql
+  sudo apt update
+  sudo apt install pkg-config libmysqlclient-dev
+  pip install mysql-connector
+  pip install mysql-connector-python
+
+  django-admin startproject BackendLendHero                           #Create Project
+  pip install django #install in virtual machine
+  python manage.py startapp lend-hero-backend                         #Create app MVC
