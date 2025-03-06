@@ -67,8 +67,8 @@ exports.createLoanRequest = async (req, res) => {
 exports.getLoanById = async (req, res) => {
   try {
     const loan = await Loan.findById(req.params.id)
-      .populate('lender', 'name email')
-      .populate('borrower', 'name email');
+      .populate('lender', 'name email') // Poblar el campo lender
+      .populate('borrower', 'name email'); // Poblar el campo borrower
 
     if (!loan) {
       return res.status(404).json({
@@ -105,12 +105,12 @@ exports.getMyLoans = async (req, res) => {
   try {
     // Préstamos donde soy prestamista
     const loansGiven = await Loan.find({ lender: req.user.id })
-      .populate('borrower', 'name email')
+      .populate('borrower', 'name email') // Poblar el campo borrower
       .sort('-createdAt');
 
     // Préstamos donde soy deudor
     const loansReceived = await Loan.find({ borrower: req.user.id })
-      .populate('lender', 'name email')
+      .populate('lender', 'name email') // Poblar el campo lender
       .sort('-createdAt');
 
     res.status(200).json({
